@@ -6,7 +6,7 @@ async fn main() {
     let db_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
     let pool: PgPool = PgPoolOptions::new()
-        .max_connections(5)
+        .max_connections(1)
         .connect(&db_url)
         .await
         .expect("failed to create pool");
